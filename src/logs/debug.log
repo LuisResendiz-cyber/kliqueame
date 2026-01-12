@@ -1,0 +1,52 @@
+=== 2025-12-02 16:55:15 ===
+M¨¦todo: POST
+Content-Type: application/json
+Input recibido: {"backgroundColor":"#e51515","textColor":"#222","buttonColor":"#00A39A","buttonTextColor":"#ffffff","backgroundImage":"","timestamp":"2025-12-02T23:03:56.799Z"}
+JSON decodificado: Array
+(
+    [backgroundColor] => #e51515
+    [textColor] => #222
+    [buttonColor] => #00A39A
+    [buttonTextColor] => #ffffff
+    [backgroundImage] => 
+    [timestamp] => 2025-12-02T23:03:56.799Z
+)
+
+===================================
+
+=== 2025-12-02 16:55:17 ===
+M¨¦todo: POST
+Content-Type: application/json
+Input recibido: {"test":"conexion","timestamp":"2025-12-02T23:03:59.088Z"}
+JSON decodificado: Array
+(
+    [test] => conexion
+    [timestamp] => 2025-12-02T23:03:59.088Z
+)
+
+===================================
+
+=== 2025-12-02 16:56:04 ===
+M¨¦todo: POST
+Content-Type: application/json
+Input recibido: {"test":"conexion","timestamp":"2025-12-02T23:04:46.456Z"}
+JSON decodificado: Array
+(
+    [test] => conexion
+    [timestamp] => 2025-12-02T23:04:46.456Z
+)
+
+===================================
+
+=== 2025-12-02 16:56:38 ===
+M¨¦todo: POST
+Content-Type: application/json
+Input recibido: {"test":"conexion","timestamp":"2025-12-02T23:05:19.976Z"}
+JSON decodificado: Array
+(
+    [test] => conexion
+    [timestamp] => 2025-12-02T23:05:19.976Z
+)
+
+===================================
+

@@ -1,0 +1,127 @@
+
+[25-Dec-2025 20:39:32 America/Mexico_City] SEND_RESET_LINK EJECUTADO
+[25-Dec-2025 20:39:32 America/Mexico_City] Array
+(
+    [email] => martinuribe73@gmail.com
+)
+
+[25-Dec-2025 20:39:32 America/Mexico_City] RESULTADO USER: Array
+(
+    [id] => 10
+)
+
+[25-Dec-2025 20:39:32 America/Mexico_City] RESET: configurando SMTP
+[25-Dec-2025 20:39:35 America/Mexico_City] ERROR SMTP: SMTP Error: Could not authenticate.
+[25-Dec-2025 20:39:55 America/Mexico_City] SEND_RESET_LINK EJECUTADO
+[25-Dec-2025 20:39:55 America/Mexico_City] Array
+(
+    [email] => martinuribe73@gmail.com
+)
+
+[25-Dec-2025 20:39:55 America/Mexico_City] RESULTADO USER: Array
+(
+    [id] => 10
+)
+
+[25-Dec-2025 20:39:55 America/Mexico_City] RESET: configurando SMTP
+[25-Dec-2025 20:39:58 America/Mexico_City] ERROR SMTP: SMTP Error: Could not authenticate.
+[25-Dec-2025 20:44:50 America/Mexico_City] SEND_RESET_LINK EJECUTADO
+[25-Dec-2025 20:44:50 America/Mexico_City] Array
+(
+    [email] => martinuribe73@gmail.com
+)
+
+[25-Dec-2025 20:44:52 America/Mexico_City] ERROR SMTP RESET: SMTP Error: Could not authenticate.
+[25-Dec-2025 20:48:47 America/Mexico_City] PHP Fatal error:  Uncaught PHPMailer\PHPMailer\Exception: SMTP Error: Could not authenticate. in /home1/victorgd/app.datamapworks.com.mx/qlikmeapp/PHPMailer/src/PHPMailer.php:2386
+Stack trace:
+#0 /home1/victorgd/app.datamapworks.com.mx/qlikmeapp/PHPMailer/src/PHPMailer.php(2177): PHPMailer\PHPMailer\PHPMailer->smtpConnect(Array)
+#1 /home1/victorgd/app.datamapworks.com.mx/qlikmeapp/PHPMailer/src/PHPMailer.php(1800): PHPMailer\PHPMailer\PHPMailer->smtpSend('Date: Thu, 25 D...', 'SMTP funcionand...')
+#2 /home1/victorgd/app.datamapworks.com.mx/qlikmeapp/PHPMailer/src/PHPMailer.php(1617): PHPMailer\PHPMailer\PHPMailer->postSend()
+#3 /home1/victorgd/app.datamapworks.com.mx/qlikmeapp/public/test_smtp.php(26): PHPMailer\PHPMailer\PHPMailer->send()
+#4 {main}
+  thrown in /home1/victorgd/app.datamapworks.com.mx/qlikmeapp/PHPMailer/src/PHPMailer.php on line 2386
+[25-Dec-2025 21:14:24 America/Mexico_City] PHP Fatal error:  Uncaught PHPMailer\PHPMailer\Exception: SMTP Error: Could not authenticate. in /home1/victorgd/app.datamapworks.com.mx/qlikmeapp/PHPMailer/src/PHPMailer.php:2386
+Stack trace:
+#0 /home1/victorgd/app.datamapworks.com.mx/qlikmeapp/PHPMailer/src/PHPMailer.php(2177): PHPMailer\PHPMailer\PHPMailer->smtpConnect(Array)
+#1 /home1/victorgd/app.datamapworks.com.mx/qlikmeapp/PHPMailer/src/PHPMailer.php(1800): PHPMailer\PHPMailer\PHPMailer->smtpSend('Date: Thu, 25 D...', 'SMTP funcionand...')
+#2 /home1/victorgd/app.datamapworks.com.mx/qlikmeapp/PHPMailer/src/PHPMailer.php(1617): PHPMailer\PHPMailer\PHPMailer->postSend()
+#3 /home1/victorgd/app.datamapworks.com.mx/qlikmeapp/public/test_smtp.php(26): PHPMailer\PHPMailer\PHPMailer->send()
+#4 {main}
+  thrown in /home1/victorgd/app.datamapworks.com.mx/qlikmeapp/PHPMailer/src/PHPMailer.php on line 2386
+[25-Dec-2025 21:14:48 America/Mexico_City] SEND_RESET_LINK EJECUTADO
+[25-Dec-2025 21:14:48 America/Mexico_City] Array
+(
+    [email] => martinuribe73@gmail.com
+)
+
+[25-Dec-2025 21:14:48 America/Mexico_City] DB NAME: victorgd_qlikme
+[25-Dec-2025 21:14:48 America/Mexico_City] RESULTADO USER: Array
+(
+    [id] => 10
+)
+
+[25-Dec-2025 21:14:48 America/Mexico_City] RESET LINK: https://app.datamapworks.com.mx/qlikmeapp/public/reset_password.php?token=039c52f98dfabced7bcefb7c8968362b8adf994b01060ab4ff29304d20a2dae7
+[25-Dec-2025 21:14:48 America/Mexico_City] PHP Warning:  require_once(/home1/victorgd/app.datamapworks.com.mx/qlikmeapp/public/../vendor/phpmailer/phpmailer/src/Exception.php): Failed to open stream: No such file or directory in /home1/victorgd/app.datamapworks.com.mx/qlikmeapp/public/send_reset_link.php on line 72
+[25-Dec-2025 21:14:48 America/Mexico_City] PHP Fatal error:  Uncaught Error: Failed opening required '/home1/victorgd/app.datamapworks.com.mx/qlikmeapp/public/../vendor/phpmailer/phpmailer/src/Exception.php' (include_path='.:/opt/cpanel/ea-php83/root/usr/share/pear') in /home1/victorgd/app.datamapworks.com.mx/qlikmeapp/public/send_reset_link.php:72
+Stack trace:
+#0 {main}
+  thrown in /home1/victorgd/app.datamapworks.com.mx/qlikmeapp/public/send_reset_link.php on line 72
+[25-Dec-2025 21:19:12 America/Mexico_City] SEND_RESET_LINK EJECUTADO
+[25-Dec-2025 21:19:12 America/Mexico_City] Array
+(
+    [email] => martinuribe73@gmail.com
+)
+
+[25-Dec-2025 21:19:12 America/Mexico_City] DB NAME: victorgd_qlikme
+[25-Dec-2025 21:19:12 America/Mexico_City] RESULTADO USER: Array
+(
+    [id] => 10
+)
+
+[25-Dec-2025 21:19:12 America/Mexico_City] RESET LINK: https://app.datamapworks.com.mx/qlikmeapp/public/reset_password.php?token=1bf71fdba09f4b67a053c0317ca2205d203c04c17921683cbebd81d6f01737f0
+[25-Dec-2025 21:19:15 America/Mexico_City] ERROR PHPMailer: SMTP Error: Could not authenticate.
+[25-Dec-2025 21:22:37 America/Mexico_City] SEND_RESET_LINK EJECUTADO
+[25-Dec-2025 21:22:37 America/Mexico_City] Array
+(
+    [email] => martinuribe73@gmail.com
+)
+
+[25-Dec-2025 21:22:39 America/Mexico_City] ERROR SMTP: SMTP Error: Could not authenticate.
+[25-Dec-2025 21:26:45 America/Mexico_City] SEND_RESET_LINK EJECUTADO
+[25-Dec-2025 21:26:45 America/Mexico_City] Array
+(
+    [email] => martinuribe73@gmail.com
+)
+
+[25-Dec-2025 21:29:40 America/Mexico_City] SEND_RESET_LINK EJECUTADO
+[25-Dec-2025 21:29:40 America/Mexico_City] Array
+(
+    [email] => martinuribe73@gmail.com
+)
+
+[26-Dec-2025 22:49:41 America/Mexico_City] PHP Warning:  require_once(/home1/victorgd/app.datamapworks.com.mx/qlikmeapp/public/../../src/bootstrap.php): Failed to open stream: No such file or directory in /home1/victorgd/app.datamapworks.com.mx/qlikmeapp/public/card_example.php on line 2
+[26-Dec-2025 22:49:41 America/Mexico_City] PHP Fatal error:  Uncaught Error: Failed opening required '/home1/victorgd/app.datamapworks.com.mx/qlikmeapp/public/../../src/bootstrap.php' (include_path='.:/opt/cpanel/ea-php83/root/usr/share/pear') in /home1/victorgd/app.datamapworks.com.mx/qlikmeapp/public/card_example.php:2
+Stack trace:
+#0 {main}
+  thrown in /home1/victorgd/app.datamapworks.com.mx/qlikmeapp/public/card_example.php on line 2
+[26-Dec-2025 22:50:35 America/Mexico_City] PHP Warning:  require_once(/home1/victorgd/app.datamapworks.com.mx/qlikmeapp/public/../../src/bootstrap.php): Failed to open stream: No such file or directory in /home1/victorgd/app.datamapworks.com.mx/qlikmeapp/public/card_example.php on line 2
+[26-Dec-2025 22:50:35 America/Mexico_City] PHP Fatal error:  Uncaught Error: Failed opening required '/home1/victorgd/app.datamapworks.com.mx/qlikmeapp/public/../../src/bootstrap.php' (include_path='.:/opt/cpanel/ea-php83/root/usr/share/pear') in /home1/victorgd/app.datamapworks.com.mx/qlikmeapp/public/card_example.php:2
+Stack trace:
+#0 {main}
+  thrown in /home1/victorgd/app.datamapworks.com.mx/qlikmeapp/public/card_example.php on line 2
+[26-Dec-2025 22:50:45 America/Mexico_City] PHP Warning:  require_once(/home1/victorgd/app.datamapworks.com.mx/qlikmeapp/public/../../src/bootstrap.php): Failed to open stream: No such file or directory in /home1/victorgd/app.datamapworks.com.mx/qlikmeapp/public/card_example.php on line 2
+[26-Dec-2025 22:50:45 America/Mexico_City] PHP Fatal error:  Uncaught Error: Failed opening required '/home1/victorgd/app.datamapworks.com.mx/qlikmeapp/public/../../src/bootstrap.php' (include_path='.:/opt/cpanel/ea-php83/root/usr/share/pear') in /home1/victorgd/app.datamapworks.com.mx/qlikmeapp/public/card_example.php:2
+Stack trace:
+#0 {main}
+  thrown in /home1/victorgd/app.datamapworks.com.mx/qlikmeapp/public/card_example.php on line 2
+[26-Dec-2025 22:52:43 America/Mexico_City] PHP Warning:  require_once(/home1/victorgd/app.datamapworks.com.mx/qlikmeapp/public/../../src/bootstrap.php): Failed to open stream: No such file or directory in /home1/victorgd/app.datamapworks.com.mx/qlikmeapp/public/card_example.php on line 2
+[26-Dec-2025 22:52:43 America/Mexico_City] PHP Fatal error:  Uncaught Error: Failed opening required '/home1/victorgd/app.datamapworks.com.mx/qlikmeapp/public/../../src/bootstrap.php' (include_path='.:/opt/cpanel/ea-php83/root/usr/share/pear') in /home1/victorgd/app.datamapworks.com.mx/qlikmeapp/public/card_example.php:2
+Stack trace:
+#0 {main}
+  thrown in /home1/victorgd/app.datamapworks.com.mx/qlikmeapp/public/card_example.php on line 2
+[26-Dec-2025 23:08:40 America/Mexico_City] Acceso a tarjeta digital - Usuario: 13 - IP: 187.243.198.83
+[26-Dec-2025 23:09:36 America/Mexico_City] Acceso a tarjeta digital - Usuario: 13 - IP: 187.243.198.83
+[26-Dec-2025 23:16:09 America/Mexico_City] Acceso a tarjeta digital - Usuario: 13 - IP: 187.243.198.83
+[26-Dec-2025 23:16:35 America/Mexico_City] Acceso a tarjeta digital - Usuario: 13 - IP: 187.243.198.83
+[26-Dec-2025 23:17:55 America/Mexico_City] Acceso a tarjeta digital - Usuario: 13 - IP: 187.243.198.83
+[26-Dec-2025 23:34:52 America/Mexico_City] Acceso a tarjeta digital - Usuario: 13 - IP: 187.243.198.83

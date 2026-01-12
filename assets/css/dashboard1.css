@@ -1,0 +1,241 @@
+    @page { 
+        size: A4; 
+        margin: 0; /* Sin márgenes en la página */
+    }
+    
+    * {
+        box-sizing: border-box;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    body {
+        margin: 0;
+        padding: 0;
+        background: #fff;
+        font-family: Inter, Arial, sans-serif;
+        color: #222;
+        width: 210mm;
+    }
+    .sheet {
+        width: 210mm;
+        height: 297mm;
+        page-break-after: always;
+    }
+    .page-break {
+        page-break-before: always;
+    }
+    .print-container {
+        width: 210mm;
+        height: 297mm;
+        padding: 0; /* Sin padding */
+        display: flex;
+        flex-direction: column;
+    }
+    .cards-grid {
+        display: grid;
+        gap: 0; /* SIN espacio entre tarjetas */
+        width: 100%;
+        height: 100%;
+        align-items: stretch;
+        justify-items: stretch;
+    }
+    /* Estilos para orientación HORIZONTAL - TAMAÑOS FIJOS SIN MÁRGENES */
+    .card.horizontal {
+        width: 85mm;
+        height: 55mm;
+        box-sizing: border-box;
+        border: 0.5mm solid #fff; /* Borde blanco para simular corte */
+        background: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        page-break-inside: avoid;
+        padding: 2mm; /* Padding interno reducido */
+    }
+    .card.horizontal .card-content {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 2mm;
+    }
+    
+    .card.horizontal .left-section {
+        display: flex;
+        gap: 2mm;
+        align-items: flex-start;
+        flex: 1;
+    }
+    
+    .card.horizontal .logo {
+        width: 12mm;
+        height: 12mm;
+        object-fit: contain;
+        border-radius: 1mm;
+        background: #fff;
+        border: 0.25mm solid #eee;
+    }
+    
+    .card.horizontal .meta {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+    
+    .card.horizontal .name {
+        font-weight: 700;
+        font-size: 8pt;
+        margin: 0;
+        line-height: 1.1;
+    }
+    
+    .card.horizontal .title {
+        font-size: 6.5pt;
+        color: #555;
+        margin: 0;
+        margin-top: 0.5mm;
+        line-height: 1.1;
+    }
+    
+    .card.horizontal .contacts {
+        margin-top: 1mm;
+        font-size: 6pt;
+        color: #333;
+        display: flex;
+        flex-direction: column;
+        gap: 0.3mm;
+    }
+    
+    .card.horizontal .qr {
+        width: 14mm;
+        height: 14mm;
+        object-fit: contain;
+        border: 0.25mm solid #eee;
+        background: #fff;
+        padding: 0.5mm;
+    }
+    
+    /* Estilos para orientación VERTICAL - TAMAÑOS FIJOS SIN MÁRGENES */
+    .card.vertical {
+        width: 55mm;
+        height: 85mm;
+        box-sizing: border-box;
+        border: 0.5mm solid #fff; /* Borde blanco para simular corte */
+        background: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: space-between;
+        page-break-inside: avoid;
+        padding: 2mm; /* Padding interno reducido */
+    }
+    
+    .card.vertical .logo-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 1mm;
+    }
+    
+    .card.vertical .logo {
+        width: 14mm;
+        height: 14mm;
+        object-fit: contain;
+        border-radius: 1mm;
+        background: #fff;
+        border: 0.25mm solid #eee;
+        margin-bottom: 1mm;
+    }
+    
+    .card.vertical .name {
+        font-weight: 700;
+        font-size: 8pt;
+        margin: 0;
+        line-height: 1.1;
+    }
+    
+    .card.vertical .title {
+        font-size: 6.5pt;
+        color: #555;
+        margin: 0;
+        margin-top: 0.5mm;
+        line-height = 1.1;
+    }
+    
+    .card.vertical .contacts-section {
+        width: 100%;
+        margin: 1mm 0;
+    }
+    
+    .card.vertical .contacts {
+        font-size: 6pt;
+        color: #333;
+        display: flex;
+        flex-direction: column;
+        gap: 0.3mm;
+        align-items: center;
+    }
+    
+    .card.vertical .qr-section {
+        margin-top: auto;
+    }
+    
+    .card.vertical .qr {
+        width: 16mm;
+        height: 16mm;
+        object-fit: contain;
+        border: 0.25mm solid #eee;
+        background: #fff;
+        padding: 0.5mm;
+    }
+    
+    /* Líneas de corte opcionales (se pueden comentar si no se quieren) */
+    .card {
+        /* Línea de corte sutil - OPcional */
+        box-shadow: inset 0 0 0 0.1mm #f0f0f0;
+    }
+    
+    /* Información de impresión */
+    .print-info {
+        position: absolute;
+        bottom: 2mm;
+        right: 2mm;
+        font-size: 6pt;
+        color: #999;
+        background: rgba(255,255,255,0.9);
+        padding: 1mm 2mm;
+        border-radius: 1mm;
+        border: 0.25mm solid #eee;
+    }
+    
+    /* Media query para impresión */
+    @media print {
+        body {
+            width: 210mm;
+            margin: 0;
+            padding: 0;
+        }
+        .sheet {
+            width: 210mm;
+            height: 297mm;
+            margin: 0;
+            padding: 0;
+        }
+        .print-container {
+            width: 210mm;
+            height: 297mm;
+            margin: 0;
+            padding: 0;
+        }
+        .print-info {
+            display: none;
+        }
+        .page-break {
+            page-break-before: always;
+        }
+        .card {
+            /* En impresión, quitar cualquier sombra/línea */
+            box-shadow: none;
+        }
+    }

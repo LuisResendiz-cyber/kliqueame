@@ -1,0 +1,75 @@
+<?php
+require_once __DIR__ . '/bootstrap.php';
+
+echo "<h1>Verificación de Base de Datos</h1>";
+
+try {
+    $pdo = db();
+    
+    echo "<h2>1. Estructura de la tabla 'cards':</h2>";
+    
+    // Verificar estructura
+    $stmt = $pdo->query("DESCRIBE cards");
+    $columns = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    
+    echo "<table border='1' cellpadding='5'>";
+    echo "<tr><th>Field</th><th>Type</th><th>Null</th><th>Key</th><th>Default</th><th>Extra</th></tr>";
+    foreach ($columns as $col) {
+        echo "<tr>";
+        echo "<td>" . $col['Field'] . "</td>";
+        echo "<td>" . $col['Type'] . "</td>";
+        echo "<td>" . $col['Null'] . "</td>";
+        echo "<td>" . $col['Key'] . "</td>";
+        echo "<td>" . $col['Default'] . "</td>";
+        echo "<td>" . $col['Extra'] . "</td>";
+        echo "</tr>";
+    }
+    echo "</table>";
+    
+    echo "<h2>2. Datos del usuario actual:</h2>";
+    
+    if (authUser()) {
+        $user_id = authUser();
+        echo "User ID: " . $user_id . "<br>";
+        
+        $stmt = $pdo->prepare("SELECT * FROM cards WHERE user_id = ?");
+        $stmt->execute([$user_id]);
+        $card = $stmt->fetch(PDO::FETCH_ASSOC);
+        
+        if ($card) {
+            echo "✅ Tarjeta encontrada<br>";
+            echo "<pre>" . print_r($card, true) . "</pre>";
+        } else {
+            echo "❌ NO hay tarjeta para este usuario<br>";
+        }
+    } else {
+        echo "❌ No autenticado<br>";
+    }
+    
+    echo "<h2>3. Prueba de UPDATE:</h2>";
+    
+    if (authUser() && isset($card['id'])) {
+        $testSql = "UPDATE cards SET updated_at = NOW() WHERE id = ?";
+        $testStmt = $pdo->prepare($testSql);
+        $testSuccess = $testStmt->execute([$card['id']]);
+        
+        if ($testSuccess) {
+            echo "✅ UPDATE básico funciona<br>";
+            echo "Filas afectadas: " . $testStmt->rowCount() . "<br>";
+        } else {
+            echo "❌ UPDATE falló<br>";
+        }
+    }
+    
+} catch (PDOException $e) {
+    echo "<div style='color: red;'><h3>❌ Error de base de datos:</h3>";
+    echo "Mensaje: " . $e->getMessage() . "<br>";
+    echo "Código: " . $e->getCode() . "<br>";
+    echo "</div>";
+}
+
+echo "<hr><h2>Variables de sesión:</h2>";
+echo "<pre>";
+print_r($_SESSION);
+echo "</pre>";
+?>

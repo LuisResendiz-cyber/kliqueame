@@ -1,0 +1,591 @@
+/* Base - Homologado con register.php */
+        :root {
+            --primary: #00A39A;
+            --primary-dark: #008b84;
+            --bg: #f4f8f9;
+            --card: #ffffff;
+            --text: #222;
+            --text-muted: #444;
+            --border: #ccc;
+            --error: #e53935;
+            --success: #28a745;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+        }
+
+        /* Header - Estilo mobile como register.php */
+        header {
+            background: var(--primary);
+            color: white;
+            padding: 14px 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        }
+
+        header h1 {
+            font-size: 18px;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        header .actions a {
+            color: white;
+            text-decoration: none;
+            margin-left: 12px;
+            padding: 8px 12px;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.08);
+            font-weight: 600;
+            transition: 0.25s;
+        }
+
+        header .actions a:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-1px);
+        }
+
+        /* Main container - Estilo mobile-first */
+        main {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        /* Título principal */
+        h2 {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--text);
+            margin: 0 0 20px 0;
+        }
+
+        /* Grid layout */
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 360px;
+            gap: 20px;
+        }
+
+        @media (max-width: 980px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Paneles - Estilo de cajas como register.php */
+        .panel {
+            width: 100%;
+            background: var(--card);
+            padding: 22px;
+            border-radius: 14px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+            border: 1px solid #e6e9f2;
+        }
+
+        .panel h3 {
+            margin: 0 0 16px 0;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* Form elements - Homologados con register.php */
+        label {
+            display: block;
+            margin-bottom: 18px;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        input[type="text"],
+        input[type="url"],
+        input[type="email"],
+        input[type="password"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px 14px;
+            font-size: 16px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            outline: none;
+            transition: 0.25s;
+            box-sizing: border-box;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 4px rgba(0,163,154,0.3);
+        }
+
+        /* Botones - Mismo estilo que register.php */
+        button, .btn-save {
+            width: 100%;
+            background: var(--primary);
+            color: #fff;
+            padding: 14px;
+            border: none;
+            font-size: 16px;
+            border-radius: 10px;
+            margin-top: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.25s;
+        }
+
+        button:hover, .btn-save:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: #6b7280;
+        }
+
+        .btn-secondary:hover {
+            background: #5a6268;
+        }
+
+        /* Logo preview */
+        .logo-preview {
+            max-width: 200px;
+            border-radius: 8px;
+            margin-top: 10px;
+            border: 1px solid #e6e9f2;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+        }
+
+        /* Slots - Manteniendo funcionalidad pero con nuevo estilo */
+        .slots {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 8px;
+        }
+
+        .slot {
+            background: #fff;
+            border: 1px solid #e6e9f2;
+            border-radius: 10px;
+            padding: 12px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 8px;
+            align-items: start;
+            cursor: move;
+            position: relative;
+            transition: 0.25s;
+        }
+
+        .slot:hover {
+            border-color: var(--primary);
+            box-shadow: 0 2px 8px rgba(0,163,154,0.1);
+        }
+
+        .slot.dragging {
+            opacity: 0.8;
+            transform: rotate(2deg);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .slot-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .slot-index {
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .drag-handle {
+            cursor: grab;
+            color: var(--text-muted);
+            padding: 4px;
+            margin-right: 4px;
+        }
+
+        .drag-handle:active {
+            cursor: grabbing;
+        }
+
+        .slot .row {
+            display: flex;
+            gap: 8px;
+        }
+
+        .slot .row > * {
+            flex: 1;
+        }
+
+        .small {
+            flex: 0 0 130px;
+        }
+
+        .remove-btn {
+            background: transparent;
+            border: 0;
+            color: #ef4444;
+            font-size: 18px;
+            cursor: pointer;
+            padding: 4px;
+            border-radius: 4px;
+            transition: 0.25s;
+        }
+
+        .remove-btn:hover {
+            background: #fee2e2;
+        }
+
+        .add-link {
+            display: inline-block;
+            margin-top: 8px;
+            padding: 12px 16px;
+            background: var(--primary);
+            color: #fff;
+            border-radius: 10px;
+            border: 0;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.25s;
+            text-decoration: none;
+        }
+
+        .add-link:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .add-link:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-top: 16px;
+        }
+
+        .actions button {
+            width: auto;
+            padding: 12px 20px;
+        }
+
+        /* Preview card - Aplicar colores guardados - VERSIÓN CORREGIDA */
+        .preview {
+            padding: 22px;
+            border-radius: 14px;
+            border: 1px solid #e6e9f2;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background-color: <?= htmlspecialchars($cardBgColor, ENT_QUOTES, 'UTF-8') ?>;
+        }
+
+        /* Imagen de fondo - SEPARADA del contenido */
+        .preview::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 0;
+            pointer-events: none;
+            <?php if (!empty($cardBgImage)): ?>
+                background-image: url('<?= htmlspecialchars($cardBgImage, ENT_QUOTES, 'UTF-8') ?>');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-blend-mode: normal;
+                /* Aplicar opacidad solo si el color de fondo no es blanco */
+                opacity: <?= ($cardBgColor !== '#ffffff' && $cardBgColor !== '#fff') ? '0.8' : '1' ?>;
+            <?php endif; ?>
+        }
+
+        /* Asegurar que todo el contenido esté por ENCIMA de la imagen */
+        .preview > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Elementos específicos con fondo semi-transparente para mejor legibilidad */
+        .preview h4,
+        .preview p,
+        .preview .muted,
+        .preview .hint {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 6px;
+            margin: 4px 0;
+            color: <?= htmlspecialchars($cardTextColor, ENT_QUOTES, 'UTF-8') ?>;
+            /* Fondo solo si hay imagen de fondo */
+            <?php if (!empty($cardBgImage)): ?>
+                background-color: rgba(255, 255, 255, 0.7);
+            <?php endif; ?>
+        }
+
+        .preview .logo {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+            border-radius: 12px;
+            border: 1px solid #e6e9f2;
+            background: #fff;
+            margin: 0 auto 12px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .preview h4 {
+            margin: 6px 0 4px 0;
+            font-weight: 600;
+        }
+
+        .preview p {
+            margin: 0 0 12px 0;
+            opacity: 0.8;
+        }
+
+        .preview .btn {
+            display: block;
+            margin: 6px auto;
+            padding: 12px 14px;
+            border-radius: 10px;
+            border: none;
+            background: <?= htmlspecialchars($cardBtnColor, ENT_QUOTES, 'UTF-8') ?>;
+            color: <?= htmlspecialchars($cardBtnTextColor, ENT_QUOTES, 'UTF-8') ?>;
+            text-decoration: none;
+            width: 80%;
+            font-weight: 600;
+            transition: 0.25s;
+            position: relative;
+            z-index: 1;
+        }
+
+        .preview .btn:hover {
+            opacity: 0.85;
+            transform: translateY(-2px);
+        }
+
+        .hint {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 8px;
+        }
+
+        /* Botones QR */
+        .qr-buttons {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            margin-top: 12px;
+        }
+
+        .qr-btn {
+            padding: 10px 14px;
+            border-radius: 10px;
+            border: none;
+            background: <?= htmlspecialchars($cardBtnColor, ENT_QUOTES, 'UTF-8') ?>;
+            color: <?= htmlspecialchars($cardBtnTextColor, ENT_QUOTES, 'UTF-8') ?>;
+            text-decoration: none;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.25s;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+        }
+
+        .qr-btn:hover {
+            opacity: 0.85;
+            transform: translateY(-2px);
+        }
+
+        .qr-btn.secondary {
+            background: #f8f9fa;
+            color: var(--text-muted);
+        }
+
+        .qr-btn.secondary:hover {
+            background: #e9ecef;
+            color: var(--text-muted);
+        }
+
+        .muted {
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+
+        /* Estilos para botones de enlaces */
+        .link-button {
+            display: block;
+            margin-bottom: 8px;
+            padding: 10px 16px;
+            background: <?= htmlspecialchars($cardBtnColor, ENT_QUOTES, 'UTF-8') ?>;
+            color: <?= htmlspecialchars($cardBtnTextColor, ENT_QUOTES, 'UTF-8') ?>;
+            text-decoration: none;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            font-weight: 500;
+            border: none;
+            position: relative;
+            z-index: 1;
+        }
+
+        .link-button:hover {
+            opacity: 0.85;
+            transform: translateY(-1px);
+        }
+
+        /* Panel de personalización */
+        .personalization-panel {
+            margin-top: 24px;
+            padding: 16px;
+            border: 1px solid #e6e9f2;
+            border-radius: 12px;
+            background: #f9fafc;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .personalization-panel:hover {
+            border-color: #4a6cf7;
+        }
+
+        .control-group label {
+            color: #333;
+            font-size: 13px;
+            font-weight: 500;
+            margin-bottom: 6px;
+        }
+
+        .reset-btn:hover {
+            background: #e6e9f2 !important;
+        }
+
+        .action-btn:hover {
+            opacity: 0.9;
+        }
+
+        .action-btn.secondary:hover {
+            background: #e6e9f2 !important;
+        }
+
+        /* Para mantener consistencia en todos los botones */
+        .btn, .qr-btn, button, .link-button {
+            font-family: inherit;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn:hover, .qr-btn:hover, button:hover, .link-button:hover {
+            opacity: 0.85;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            main {
+                padding: 15px;
+            }
+            
+            .panel {
+                padding: 18px;
+            }
+            
+            h2 {
+                font-size: 24px;
+            }
+            
+            .small {
+                flex: 1;
+            }
+            
+            .qr-buttons {
+                flex-direction: column;
+            }
+            
+            .qr-btn {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .actions {
+                flex-direction: column;
+            }
+            
+            .actions button {
+                width: 100%;
+            }
+            
+            .personalization-panel {
+                padding: 12px;
+            }
+        }
+
+        /* Campos de tipo específico */
+        .type-fields > div {
+            margin-top: 8px;
+        }
+
+        .type-fields label.muted {
+            margin-bottom: 6px;
+            font-size: 12px;
+        }
+
+        .readonly-url {
+            background-color: #f8f9fa;
+            color: #666;
+            cursor: not-allowed;
+        }
+
+        /* Estilo para mostrar URL de manera visual */
+        .url-preview {
+            display: block;
+            margin-top: 4px;
+            font-family: monospace;
+            font-size: 11px;
+            color: #666;
+            word-break: break-all;
+            padding: 4px 6px;
+            background: #f8f9fa;
+            border-radius: 4px;
+            border-left: 3px solid #4a6cf7;
+        }
+
+        /* Input visible solo para custom */
+        .input-custom-url:not(.readonly-url) {
+            background-color: white;
+            color: #222;
+            cursor: text;
+        }
+
+        /* Animaciones para notificaciones */
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        @keyframes slideOut {
+            from { transform: translateX(0); opacity: 1; }
+            to { transform: translateX(100%); opacity: 0; }
+        }
